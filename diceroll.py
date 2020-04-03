@@ -4,19 +4,24 @@ import random
 print("Welcome to the virtual dice roller")
 
 rollcounter = 0
-while rollcounter < 10:
+roll_history = []
+max_roll_no = 50
+while rollcounter < max_roll_no:
 
-  input("Would you like to roll the dice? Y/N: ")
-  if input == "Y":
-     roll = random.randint(1,7)
-     print("The dice roll was a " + str(roll))
+  input("Would you like to roll the dice? y/n: ")
+  if "y":
+     roll = random.randint(1,6)
+     print("You rolled a " + str(roll))
      rollcounter = rollcounter + 1
-  elif input == "N":
+     roll_history.append(roll)
+  elif "n":
      print("Let me know when you are ready to roll.")
   else:
-     print("Please enter Y or N to roll the dice")
+     print('Please enter \'y\' or \'n\' to roll the dice: ')
 
-  break
+if rollcounter == max_roll_no:
+  print("You have rolled the maximum number of times")
+  print("Here is the roll history: " + roll_history)
 
-print("You have rolled the maximum number of times")
+
 
