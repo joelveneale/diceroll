@@ -22,4 +22,21 @@ while rollcounter < max_roll_no:
 
 if rollcounter == max_roll_no:
   print("You have rolled the maximum number of times")
-  print("Here is the roll history: " + roll_history)
+  print("Here is the roll history: " + str(roll_history))
+
+roll_df = pd.DataFrame(roll_history, columns=["Number"])
+#roll_df_sorted = roll_df.sort_values
+
+#print(roll_df)
+roll_counts = roll_df.Number.value_counts()
+most_common= roll_counts.max()
+
+roll_mean = roll_df.Number.mean()
+
+
+print("The most common roll was: " + str(most_common))
+print("The mean of all rolls was: " + str(roll_mean))
+
+
+
+
