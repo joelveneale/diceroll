@@ -1,11 +1,12 @@
 import random
-
+import numpy as np
+import pandas as pd
 
 print("Welcome to the virtual dice roller")
 
 rollcounter = 0
 roll_history = []
-max_roll_no = 50
+max_roll_no = 10
 while rollcounter < max_roll_no:
 
   input("Would you like to roll the dice? y/n: ")
@@ -22,6 +23,3 @@ while rollcounter < max_roll_no:
 if rollcounter == max_roll_no:
   print("You have rolled the maximum number of times")
   print("Here is the roll history: " + roll_history)
-
-
-
