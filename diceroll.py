@@ -6,8 +6,16 @@ print("Welcome to the virtual dice roller")
 
 rollcounter = 0
 roll_history = []
-max_roll_no = 10
-while rollcounter < max_roll_no:
+max_roll_num = int(input("How many times would you like to roll? Please enter a number between 1 and 100: "))
+minmax = list(range(0, 100))
+
+if max_roll_num in minmax:
+  print("Lets roll the dice " + str(max_roll_num) + " times")
+else:
+  print("Please input a number")
+
+#max_roll_no = 10
+while rollcounter < int(max_roll_num):
 
   input("Would you like to roll the dice? y/n: ")
   if "y":
@@ -20,7 +28,7 @@ while rollcounter < max_roll_no:
   else:
      print('Please enter \'y\' or \'n\' to roll the dice: ')
 
-if rollcounter == max_roll_no:
+if rollcounter == max_roll_num:
   print("You have rolled the maximum number of times")
   print("Here is the roll history: " + str(roll_history))
 
